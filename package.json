@@ -1,0 +1,16 @@
+{
+  "name": "dole",
+  "version": "1.0.0-alpha-0",
+  "description": "dole application",
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "author": "Pavel Blagodov",
+  "license": "MIT",
+  "keywords": [],
+  "bugs": {
+    "url": ""
+  },
+  "homepage": ""
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dole</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi">
+    <link rel="stylesheet" href="bower_components/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="bower_components/onsenui/css/onsen-css-components.css">
+    <link rel="stylesheet" href="bower_components/onsenui/css/onsen-css-components-purple-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="app/components/dl_steps/dl_steps.css">
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="bower_components/lodash/lodash.js"></script>
+    <script type="text/javascript" src="bower_components/pouchdb/dist/pouchdb.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-pouchdb/angular-pouchdb.min.js"></script>
+    <script type="text/javascript" src="bower_components/onsenui/js/onsenui.js"></script>
+    <script type="text/javascript" src="bower_components/onsenui/js/angular-onsenui.js"></script>
+    <script type="text/javascript" src="app/index.js"></script>
+    <script type="text/javascript" src="app/overview/dl_overview_controller.js"></script>
+    <script type="text/javascript" src="app/group/dl_group_controller.js"></script>
+    <script type="text/javascript" src="app/group/dl_group_service.js"></script>
+    <script type="text/javascript" src="app/group/dl_group_create_controller.js"></script>
+    <script type="text/javascript" src="app/member/dl_member_controller.js"></script>
+    <script type="text/javascript" src="app/member/dl_member_service.js"></script>
+    <script type="text/javascript" src="app/wizard/dl_wizard_service.js"></script>
+    <script type="text/javascript" src="app/wizard/outgo/dl_outgo_controller.js"></script>
+    <script type="text/javascript" src="app/wizard/parts/dl_parts_controller.js"></script>
+    <script type="text/javascript" src="app/wizard/details/dl_details_controller.js"></script>
+    <script type="text/javascript" src="app/result/dl_result_controller.js"></script>
+    <script type="text/javascript" src="app/result/dl_result_service.js"></script>
+    <script type="text/javascript" src="app/components/dl_database.js"></script>
+    <script type="text/javascript" src="app/components/dl_local_database.js"></script>
+    <script type="text/javascript" src="app/components/dl_autocomplete.js"></script>
+    <script type="text/javascript" src="app/components/dl_steps/dl_steps.js"></script>
+    <script type="text/javascript" src="app/components/dl_promise_helper.js"></script>
+    <script type="text/javascript" src="app/menu/dl_menu_controller.js"></script>
+    <script type="text/javascript" src="app/components/dl_filters.js"></script>
+  </head>
+  <body>
+    <ons-sliding-menu
+       main-page="app/group/dl_group.html"
+       menu-page="app/menu/dl_menu.html"
+       side="left"
+       max-slide-distance="250px"
+       var="menu">
+    </ons-sliding-menu>
+  </body>
+</html>

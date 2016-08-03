@@ -1,0 +1,43 @@
+<ons-page ng-controller="dlOutgoController as outgoCtl">
+  <ons-toolbar>
+    <div class="left">
+      <ons-back-button>
+        Back
+      </ons-back-button>
+    </div>
+    <div class="center">Outgo</div>
+    <div class="right">
+      <ons-toolbar-button
+         ng-click="outgoCtl.onNextButton()">
+        Next
+      </ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+  <ons-scroller>
+    <ons-list>
+      <ons-list-item>
+        <form style="width: 100%;" ng-submit="outgoCtl.onNextButton()">
+          <input
+             required
+             type="number"
+             ng-model="outgoCtl.outgo.amount"
+             class="text-input text-input--transparent"
+             placeholder="How much?">
+        </form>
+      </ons-list-item>
+      <ons-list-item tappable ng-repeat="currency in outgoCtl.currency">
+        <label class="left">
+          <ons-input
+             name="currency"
+             value="{{currency}}"
+             ng-model="outgoCtl.outgo.currency"
+             type="radio"
+             input-id="radio-{{currency}}"></ons-input>
+        </label>
+        <label for="radio-{{currency}}" class="center">
+          {{currency}}
+        </label>
+      </ons-list-item>
+    </ons-list>
+  </ons-scroller>
+</ons-page>

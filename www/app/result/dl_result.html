@@ -1,0 +1,25 @@
+<ons-page ng-controller="dlResultController as resultCtl">
+  <ons-toolbar>
+    <div class="left">
+      <ons-back-button>
+        Back
+      </ons-back-button>
+    </div>
+    <div class="center">Result</div>>
+  </ons-toolbar>
+  <ons-scroller>
+    <ons-list>
+      <ons-list-header>
+        Debtors
+      </ons-list-header>
+      <ons-list-item tappable ng-repeat="(member, result) in resultCtl.result">
+        {{member}} {{result}} {{resultCtl.resultCurrency}}
+      </ons-list-item>
+    </ons-list>
+    <ons-list>
+      <ons-list-header>
+        Creditors
+      </ons-list-header>
+    </ons-list>
+  </ons-scroller>
+</ons-page>

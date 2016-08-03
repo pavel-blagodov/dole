@@ -1,0 +1,15 @@
+.step-item {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    color: #afafaf;
+}
+.step-item.active {color: #000;}
+.step-item.complete {color: #666;}
+.wizard {
+    height: 50px;
+}

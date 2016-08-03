@@ -1,0 +1,42 @@
+<ons-page ng-controller="dlMemberController as memberCtl">
+  <ons-toolbar>
+    <div class="left">
+      <ons-back-button>
+        Back
+      </ons-back-button>
+    </div>
+    <div class="center">Add Member</div>
+  </ons-toolbar>
+  <ons-scroller>
+    <ons-list>
+      <form ng-submit="memberCtl.addMember(memberCtl.memberName)">
+        <ons-list-item>
+          <input
+             type="text"
+             class="text-input text-input--transparent"
+             ng-model="memberCtl.memberName"
+             placeholder="Person or contanct for your phone">
+        </ons-list-item>
+      </form>
+      <div ng-show="!memberCtl.memberName">
+        <ons-list-item ng-repeat="member in memberCtl.members">
+          {{member.doc.name}}
+        </ons-list-item>
+      </div>
+      <div ng-show="!!memberCtl.memberName">
+        <ons-list-item
+           ng-repeat="contact in memberCtl.contacts | filter:{name: {formatted: memberCtl.memberName}}"
+           ng-click="memberCtl.addMember(contact.name.formatted)">
+          <ons-row align="center">
+            <ons-col width="40px">
+              <ons-icon icon="fa-user-secret"></ons-icon>
+            </ons-col>
+            <ons-col>
+              {{contact.name.formatted}}
+            </ons-col>
+          </ons-row>
+        </ons-list-item>
+      </div>
+    </ons-list>
+  </ons-scroller>
+</ons-page>

@@ -1,0 +1,53 @@
+<ons-navigator var="appNavigator" animation="lift-ios">
+  <ons-page ng-controller="dlOverviewController as overviewCtl" class="outgo-form">
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button ng-click="menu.toggleMenu()">
+          <ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">{{overviewCtl.selectedGroup}}</div>
+      <div class="right">
+        <!-- <ons-toolbar-button ng-click="overviewCtl.onAddMember()"> -->
+        <!--   <ons-icon -->
+        <!--      icon="user-plus" -->
+        <!--      fixed-width="false" -->
+        <!--      style="vertical-align: -4px;"> -->
+        <!--   </ons-icon> -->
+        <!-- </ons-toolbar-button> -->
+        <ons-toolbar-button ng-click="overviewCtl.onAddNew()">
+          <ons-icon
+             icon="ion-plus"
+             fixed-width="false"
+             style="vertical-align: -4px;">
+          </ons-icon>
+        </ons-toolbar-button>
+      </div>
+    </ons-toolbar>
+    <ons-scroll>
+      <ons-button modifier="large" ng-click="overviewCtl.onCalculateButton()">calculate</ons-button>
+      <ons-list>
+        <ons-list-item ng-repeat="item in overviewCtl.items">
+          <div class="center" style="padding: 10px 0;">
+            <ons-row>
+              <ons-col>
+                <span>{{item.doc.outgo.amount}}</span>
+                <span>{{item.doc.outgo.currency}}</span>
+                -
+                <span>{{item.doc.details.description}}</span>
+              </ons-col>
+            </ons-row>
+            <ons-row>
+              <ons-col>
+                <span ng-repeat="(member, desc) in item.doc.parts.byUser">
+                  <span>{{member}}</span>
+                  <span>{{desc.dole * item.doc.parts.onePartAmount}};</span>
+                </span>
+              </ons-col>
+            </ons-row>
+          </div>
+        </ons-list-item>
+      </ons-list>
+    </ons-scroll>
+  </ons-page>
+</ons-navigator>

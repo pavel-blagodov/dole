@@ -1,0 +1,34 @@
+<ons-page ng-controller="dlDetailsController as detailsCtl" class="details-form">
+  <ons-toolbar>
+    <div class="left">
+      <ons-back-button>
+        Back
+      </ons-back-button>
+    </div>
+    <div class="center">Details</div>
+  </ons-toolbar>
+  <ons-scroller>
+    <form ng-submit="detailsCtl.onSubmit()">
+      <ons-list>
+        <ons-list-item>
+          <textarea
+            ng-model="detailsCtl.details.description"
+            class="textarea textarea--transparent"
+            placeholder="Description">
+          </textarea>
+        </ons-list-item>
+        <ons-list-item tappable ng-click="detailsCtl.takePicture()">
+          <span class="center">Take a reciept picture</span>
+          <ons-icon
+            icon="fa-camera"
+            size="22px"
+            class="right"
+            style="font-size: 22px;">
+          </ons-icon>
+        </ons-list-item>
+        <img src="" id="myImage" width="100%;">
+      </ons-list>
+      <button class="button button--large" type="submit">Finish</button>
+    </form>
+  </ons-scroller>
+</ons-page>

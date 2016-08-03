@@ -1,0 +1,6 @@
+.dl-autocomplete-text-field {position: relative; background: transparent;}
+.dl-autocomplete-background {position: absolute; color: #999; top: 0; left: 0;}
+.dl-autocomplete-wrapper {position: relative;}
+.outgo-form .dl-autocomplete-wrapper {width: 100%;}
+.outgo-form input {width: 100%; margin-top: 4px;}
+.outgo-form textarea {height: 80px;}

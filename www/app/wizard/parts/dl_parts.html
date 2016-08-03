@@ -1,0 +1,56 @@
+<ons-page ng-controller="dlPartsController as partsCtl">
+  <ons-toolbar>
+    <div class="left">
+      <ons-back-button>Back</ons-back-button>
+    </div>
+    <div class="center">Set Parts</div>
+    <div class="right">
+      <ons-toolbar-button ng-click="partsCtl.onAddMember()">
+        <ons-icon
+           icon="user-plus"
+           fixed-width="false"
+           style="vertical-align: -4px;">
+        </ons-icon>
+      </ons-toolbar-button>
+      <ons-toolbar-button ng-click="partsCtl.onNextButton()">Next</ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+  <ons-scroller>
+    <ons-list>
+      <ons-list-header>
+        One part is {{partsCtl.calculateOnePart()}} {{partsCtl.outgo.currency}}
+      </ons-list-header>
+      <ons-list-item
+         tappable
+         ng-repeat="debtor in partsCtl.debtors">
+        <label class="left">
+          <ons-input
+             ng-change="partsCtl.disableEnableMember(debtor.doc.name)"
+             type="checkbox"
+             ng-disabled="partsCtl.maybeDisableInput(debtor.doc.name)"
+             ng-model="partsCtl.debtorParts[debtor.doc.name].involved"
+             input-id="parts-check-{{$index}}"></ons-input>
+        </label>
+        <label for="parts-check-{{$index}}" class="center">
+          {{debtor.doc.name}}
+        </label>
+	<label
+           class="right">
+          <ons-button
+             style="font-size: 20px;"
+             ng-disabled="partsCtl.debtorParts[debtor.doc.name].dole === 0"
+             modifier="quiet"
+             ng-click="partsCtl.takeOffPart(debtor.doc.name)">-</ons-button>
+	  <span style="margin: 0 10px; display: inline-block;">
+            {{partsCtl.debtorParts[debtor.doc.name].dole || 0}}
+          </span>
+          <ons-button
+             style="font-size: 20px;"
+             ng-disabled="partsCtl.isPlusButtonDisabled()"
+             modifier="quiet"
+             ng-click="partsCtl.addPart(debtor.doc.name)">+</ons-button>
+	</label>
+      </ons-list-item>
+    </ons-list>
+  </ons-scroller>
+</ons-page>
