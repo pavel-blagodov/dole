@@ -124,6 +124,7 @@
         onePartAmount: calculateOnePart(),
         byUser: vm.debtorParts
       };
+      console.log(partsDesc)
       dlWizardService.setToWizard("parts", partsDesc).then(function () {
         $scope.appNavigator.pushPage('app/wizard/details/dl_details.html');
       });

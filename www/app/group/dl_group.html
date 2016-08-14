@@ -1,43 +1,37 @@
-<ons-navigator var="appNavigator" animation="slide">
-  <ons-page ng-controller="dlGroupController as groupCtl">
-    <ons-toolbar>
-      <div class="left">
-        <ons-toolbar-button ng-click="menu.toggleMenu()">
-          <ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon>
-        </ons-toolbar-button>
-      </div>
-      <div class="center">Select Group</div>
-      <div class="right">
-        <ons-toolbar-button>
-          <ons-icon
-            icon="ion-plus"
-            ng-click="groupCtl.createGroup()"
-            fixed-width="false"
-            style="vertical-align: -4px;">
-          </ons-icon>
-        </ons-toolbar-button>
-      </div>
-    </ons-toolbar>
-    <ons-scroller>
-      <ons-list>
-        <ons-list-item
-          ng-repeat="group in groupCtl.groups"
-          class="list__item--tappable list__item__line-height">
-            <ons-row>
-              <ons-col width="90px" align="center">{{group.doc.name}}</ons-col>
-              <ons-col>
-                <div style="float:right;">
-                  <button
-                    class="button button--quiet"
-                    ng-click="groupCtl.deleteGroup(group.doc)">Delete</button>
-                  <button
-                    class="button button--quiet"
-                    ng-click="groupCtl.selectGroup(group.doc)">Select</button>
-                </div>
-              </ons-col>
-            </ons-row>
-        </ons-list-item>
-      </ons-list>
-    </ons-scroller>
-  </ons-page>
-</ons-navigator>
+<ons-page ng-controller="dlGroupController as groupCtl">
+  <ons-toolbar>
+    <div class="left">
+      <ons-toolbar-button ng-click="menu.toggleMenu()">
+        <ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+    <div class="center">Select Group</div>
+    <div class="right">
+      <ons-toolbar-button ng-click="groupCtl.createGroup()">
+        <ons-icon
+           icon="ion-plus"
+           fixed-width="false"
+           style="vertical-align: -4px;">
+        </ons-icon>
+      </ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+  <ons-scroller>
+    <ons-list>
+      <ons-list-item
+         ng-repeat="group in groupCtl.groups"
+         class="list__item--tappable list__item__line-height">
+        <ons-carousel swipeable initial-index="0" auto-scroll  style="height: 70px;">
+          <ons-carousel-item class="list-action-item">
+            {{group.doc.name}}
+          </ons-carousel-item>
+          <ons-carousel-item class="list-action-menu">
+            <button
+               class="button button--quiet"
+               ng-click="groupCtl.deleteGroup(group.doc)">Delete</button>
+          </ons-carousel-item>
+        </ons-carousel>
+      </ons-list-item>
+    </ons-list>
+  </ons-scroller>
+</ons-page>

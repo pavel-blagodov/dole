@@ -23,6 +23,7 @@
 
           var debtors = {};
           var creditors = {};
+          console.log(rows)
           _.forEach(rows, function (row) {
             if (currency !== row.doc.outgo.currency) {
               var rate = _.find(rates.rates.query.results.rate, function (rate) {
@@ -37,7 +38,7 @@
               if (desc.dole < 1 && desc.involved) {
                 debtors[member] -= onePartAmount;
               }
-              if (desc.dole > 1) {
+              if (desc.dole >= 1) {
                 if (desc.involved) {
                   var creditorPart = desc.dole - 1;
                 } else {

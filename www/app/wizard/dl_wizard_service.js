@@ -16,7 +16,8 @@
       setSelectedGroup: setSelectedGroup,
       getSelectedGroup: getSelectedGroup,
       done: done,
-      getItems: getItems
+      getItems: getItems,
+      deleteItem: deleteItem
     };
 
     return dlWizardService;
@@ -41,6 +42,11 @@
 
     function getSelectedGroup() {
       return getFromWizard("group");
+    }
+
+    function deleteItem (doc) {
+      doc._deleted = true;
+      dldb.put(doc);
     }
 
     function getItems() {

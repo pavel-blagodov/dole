@@ -19,19 +19,7 @@
 
     function activate() {
       fetchGroups();
-      var changes = dldb
-          .changes({
-            since: 'now',
-            live: true,
-            filter: function (doc) {
-              return doc._id.startsWith("group-");
-            }
-          })
-          .on('change', fetchGroups);
 
-      $scope.$on("$destroy", function () {
-        changes.cancel();
-      });
     }
 
     function fetchGroups() {
@@ -41,7 +29,7 @@
 
     function selectGroup(doc) {
       dlWizardService.setSelectedGroup(doc).then(function () {
-        $scope.menu.setMainPage('app/overview/dl_overview.html', {closeMenu: true,  animation: 'slide'});
+        $scope.appNavigator.pushPage('app/overview/dl_overview.html', {closeMenu: true,  animation: 'slide'});
       });
     }
 

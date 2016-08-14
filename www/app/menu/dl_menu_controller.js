@@ -10,7 +10,8 @@
     vm.onGroupClick = onGroupClick;
 
     function onGroupClick() {
-      $scope.menu.setMainPage('app/group/dl_group.html', {closeMenu: true});
+      $scope.appNavigator.resetToPage('app/group/dl_group.html');
+      $scope.menu.closeMenu();
     }
   }
 })();

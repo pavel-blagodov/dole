@@ -4,3 +4,18 @@
 .outgo-form .dl-autocomplete-wrapper {width: 100%;}
 .outgo-form input {width: 100%; margin-top: 4px;}
 .outgo-form textarea {height: 80px;}
+
+ons-carousel {
+  width: 25%;
+  overflow: visible !important;
+  position: relative;
+}
+.list-action-item {
+  width: 400% !important;
+  xtransform: none !important; /* remove the x to stop transition of the first item */
+}
+.list-action-menu {
+    background-color: #afafaf;
+  width:100% !important;
+  margin-left: 300%;
+}
